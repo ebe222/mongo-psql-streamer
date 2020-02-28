@@ -1,0 +1,98 @@
+{
+  "DatabaseName":{
+
+    "tablename":{
+      "pk":"id",
+      "_id": {
+        "dest": "id",
+        "type": "TEXT"
+      },
+      "idOfAnotherTableNotExisting": {
+        "dest":"id_of_another_table_not_existing",
+        "ref": {"active": false, "referrence": "another_table_not_existing", "referrence_pkey": "id", "referrence_alias": "fk_another_table_not_existing_id",
+          "foreign_key": "fk_tablename_another_table", "key": "id_of_another_table_not_existing"},
+        "type":"TEXT"
+      },
+      "stringColumn": {
+        "dest":"string_column",
+        "type":"TEXT"
+      },
+      "booleanColumn": {
+        "dest":"boolean_column",
+        "type":"BOOLEAN"
+      },
+      "integerColumn": {
+        "dest":"integer_column",
+        "type":"INTEGER"
+      },
+      "floatColumn": {
+        "dest":"float_column",
+        "type":"FLOAT"
+      },
+      "ArrayOfIds": {
+        "dest":"TableForArray",
+        "fk": "tablename_id",
+        "type": "_ARRAY"
+      },
+      "timestampColumn": {
+        "dest":"timestamp_column",
+        "type":"TIMESTAMP"
+      },
+      "anArrayOfInteger": {
+        "dest":"integer_array_table",
+        "fk": "tablename_id",
+        "type": "_ARRAY_OF_SCALARS",
+        "valueField": "year"
+      }
+    },
+
+    "table_for_array":{
+      "pk":"id",
+      "_id": {
+        "dest": "_id",
+        "type": "TEXT"
+      },
+      "tablename_id": {
+        "dest":"tablename_id",
+        "ref": {"active": true, "referrence": "tablename", "referrence_pkey": "id", "referrence_alias": "fk_tablename_id",
+          "foreign_key": "fk_table_for_array_tablename", "key": "tablename_id"},
+        "type":"TEXT"
+      },
+      "$oid": {
+        "dest":"not_currently_existing_table_id",
+        "ref": {"active": false, "referrence": "not_currently_existing_table", "referrence_pkey": "id", "referrence_alias": "fk_not_currently_existing_table_id",
+          "foreign_key": "fk_table_for_array_not_currently_existing_table", "key": "not_currently_existing_table_id"},
+        "type":"TEXT"
+      }
+    },
+
+
+
+
+    "integer_array_table":{
+      "pk":"id",
+      "_id": {
+        "dest": "_id",
+        "type": "TEXT"
+      },
+      "tablename_id": {
+        "dest":"tablename_id",
+        "ref": {"active": true, "referrence": "tablename", "referrence_pkey": "id", "referrence_alias": "fk_tablename_id",
+          "foreign_key": "fk_integer_array_table_tablename", "key": "tablename_id"},
+        "type":"TEXT"
+      },
+      "year": {
+        "dest":"year",
+        "type":"INTEGER"
+      }
+    }
+
+
+
+
+
+
+
+  }
+}
+
